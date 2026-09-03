@@ -1,9 +1,12 @@
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <>
-      <div className={`flex items-center w-full min-h-screen px-6 justify-center`}>
+      <div
+        className={`flex items-center w-full min-h-screen px-6 justify-center`}
+      >
         <div className="max-w-xl w-full space-y-6">
           <div className="mx-auto">
             <h1 className="text-4xl font-semibold tracking-tight">
@@ -18,7 +21,9 @@ export default function Home() {
               </p>
             </div>
             <Button className={`mt-5 text-base`}>
-              <p className="">Let's understand me a bit further?</p>
+              <Link href={"/about"}>
+                <p className="">Let's understand me a bit further?</p>
+              </Link>
             </Button>
           </div>
         </div>
