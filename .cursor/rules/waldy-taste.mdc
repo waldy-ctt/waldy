@@ -1,0 +1,16 @@
+---
+description: Always apply Waldy premium-minimal taste for UI and visual work
+alwaysApply: true
+---
+
+# Waldy Taste (always on)
+
+Locked visual taste: **premium minimal, sharp editorial** — not Apple soft, not bloated, not empty minimalism.
+
+1. Read and follow `.cursor/skills/waldy-taste/SKILL.md` (`reference.md` for recipes).
+2. Dials stay **variance 4 / motion 2 / density 2** unless the user explicitly changes direction.
+3. Settled decisions: **dark-only theme** (no light palette or toggle) and **English-only** (no i18n).
+4. Ban: backdrop blur, large radius, pills, frosted glass, glow, generic AI landing aesthetics.
+5. Adding UI must earn its place — prefer removing over decorating.
+
+Announce once per UI task: *"Applying Waldy taste (premium-minimal / dials 4·2·2)."*

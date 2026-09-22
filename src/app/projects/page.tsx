@@ -1,34 +1,22 @@
-import Link from "next/link";
+import type { Metadata } from "next";
+import { ContentList } from "@/components/content-list";
 import { getAllPosts } from "@/lib/md";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description:
+    "Projects and build notes by Waldy (Le Thanh Hieu) — what I made, how it works, and what I learned.",
+  alternates: { canonical: "/projects" },
+};
 
 export default function ProjectIndex() {
   const posts = getAllPosts("projects");
 
   return (
-    <div className="mx-auto max-w-2xl px-6 mt-20">
-      <h1 className="text-4xl font-semibold ">Projects</h1>
-      <p>Just some random projects document XD.</p>
-      <div className="space-y-6 mt-8">
-        {posts.map((post) => (
-          <Link
-            key={post.slug}
-            href={`/projects/${post.slug}`}
-            className="block group border border-border p-5 rounded-lg hover:border-foreground/50 transition-colors"
-          >
-            <div className="flex items-center justify-between">
-              <h2 className="text-xl font-medium group-hover:text-primary transition-colors">
-                {post.title}
-              </h2>
-              <span className="text-sm text-muted-foreground ml-3">
-                {post.date}
-              </span>
-            </div>
-            <p className="text-muted-foreground mt-2 text-sm">
-              {post.description}
-            </p>
-          </Link>
-        ))}
-      </div>
-    </div>
+    <main className="page-column">
+      <h1 className="page-title">Projects</h1>
+      <p className="page-lead">Notes and documents from things I&apos;ve built.</p>
+      <ContentList items={posts} basePath="/projects" />
+    </main>
   );
 }

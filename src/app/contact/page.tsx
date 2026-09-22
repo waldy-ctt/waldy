@@ -1,5 +1,13 @@
+import type { Metadata } from "next";
 import { LucideMail } from "lucide-react";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Ways to reach Waldy (Le Thanh Hieu) — email, GitHub, LinkedIn, Telegram, and more.",
+  alternates: { canonical: "/contact" },
+};
 
 export default function Contact() {
   const contactList: {
@@ -85,23 +93,35 @@ export default function Contact() {
   ];
 
   return (
-    <>
-      <div className="mx-auto max-w-2xl px-6 mt-20 text-lg leading-relaxed text-primary-foreground mb-20">
-        <h1 className="text-2xl">These are ways you can contact to me</h1>
+    <main className="page-column text-base leading-relaxed text-foreground sm:text-lg">
+      <h1 className="page-title">Contact</h1>
+      <p className="page-lead">Ways to reach me.</p>
 
-        <div className="mt-10 grid grid-cols-2 place-items-leading gap-x-10 gap-y-5">
-          {contactList.map((item) => (
+      <div className="mt-6 h-px w-14 bg-foreground/50 sm:mt-8" aria-hidden />
+
+      <ul className="mt-10 grid grid-cols-1 gap-x-10 gap-y-5 sm:mt-12 sm:grid-cols-2">
+        {contactList.map((item) => (
+          <li key={item.link} className="min-w-0">
             <Link
-              className="flex flex-row items-center gap-x-2 pointer hover:text-muted-foreground"
+              className="group flex min-w-0 items-center gap-x-3 text-foreground transition-colors hover:text-muted-foreground"
               href={item.link}
-              key={item.link}
+              target={item.link.startsWith("mailto:") ? undefined : "_blank"}
+              rel={
+                item.link.startsWith("mailto:")
+                  ? undefined
+                  : "noopener noreferrer"
+              }
             >
-              <div className="fill-foreground w-5 h-5">{item.icon}</div>
-              <p className="border-b-1 border-foreground">{item.title}</p>
+              <span className="flex size-5 shrink-0 items-center justify-center fill-foreground text-foreground [&_svg]:size-5">
+                {item.icon}
+              </span>
+              <span className="min-w-0 break-words border-b border-foreground/50 transition-colors group-hover:border-muted-foreground">
+                {item.title}
+              </span>
             </Link>
-          ))}
-        </div>
-      </div>
-    </>
+          </li>
+        ))}
+      </ul>
+    </main>
   );
 }
