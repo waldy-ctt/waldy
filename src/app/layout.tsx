@@ -59,10 +59,14 @@ export const metadata: Metadata = {
     },
   },
   verification: {
+    // Ownership tokens are public by design (they live in HTML). Env overrides
+    // remain available if you rotate keys later.
     google: process.env.GOOGLE_SITE_VERIFICATION,
-    other: process.env.BING_SITE_VERIFICATION
-      ? { "msvalidate.01": process.env.BING_SITE_VERIFICATION }
-      : undefined,
+    other: {
+      "msvalidate.01":
+        process.env.BING_SITE_VERIFICATION ??
+        "088445768883D013868600F1BBC33387",
+    },
   },
 };
 
