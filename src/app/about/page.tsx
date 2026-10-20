@@ -39,13 +39,13 @@ export default function About() {
       <p className="mt-8 sm:mt-10">
         My current status:{" "}
         <span className="font-medium text-emerald-400">
-          Opening For Opportunity
+          Working Remotely at PhuQuocDevs
         </span>
       </p>
       <p className="mt-2">
         Current location:{" "}
         <span className="bg-gradient-to-r from-red-500 to-yellow-400 bg-clip-text font-medium text-transparent">
-          Viet Nam / Phu Quoc
+          Viet Nam / Phu Quoc (Duong Dong)
         </span>
       </p>
       <p className="mt-2">
