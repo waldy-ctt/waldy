@@ -6,4 +6,15 @@ tags: ["list"]
 status: Finished
 ---
 
-Currently none rn. Update later.
+> [!INFO] If curious how command work, each param, option do what. Paste them into some AI and they will explain
+
+Finding a file that have a specific pattern / text:
+
+```bash / fish
+find . -type f -exec grep -H "<pattern / text>" {} +
+```
+
+input:
+- <pattern / text>
+
+
