@@ -15,6 +15,6 @@ find . -type f -exec grep -H "<pattern / text>" {} +
 ```
 
 input:
-- `<pattern / text>`
+- \<pattern / text>
 
 
