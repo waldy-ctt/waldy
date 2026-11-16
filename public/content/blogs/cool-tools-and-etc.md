@@ -7,3 +7,4 @@ status: Finished
 ---
 
 - [yoyotools](https://yoyotools.com/): browser local first tool set.
+- [LYNX-Share](https://lynx-share.com/): Opensource - rust alternative of FL-Studio
