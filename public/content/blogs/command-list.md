@@ -18,3 +18,19 @@ input:
 - \<pattern / text>
 
 
+---
+Adding some build into program list to easy use
+
+```
+mkdir -p ~/.local/bin
+cp target/release/yapfast ~/.local/bin/yapfast
+```
+
+and make file at `~/.local/share/applications/yapfast.desktop`
+```
+[Desktop Entry]
+Name=Yapfast
+Exec=/home/waldy/.local/bin/yapfast
+Type=Application
+Categories=Network;InstantMessaging;
+```
